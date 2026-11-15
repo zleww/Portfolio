@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-colorway="crimson">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Out of bounds | Ezekiel Dellosa</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0A0A0C">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- styles are in the page on purpose: GitHub Pages shows this file for any
+       wrong address, even deep ones, so a relative link to css/style.css could break -->
+  <style>
+    :root {
+      --bg: #0a0a0c;
+      --line: #24314f;
+      --accent: #dc143c;
+      --on-accent: #ffffff;
+      --hi: #ff3b4e;
+      --glow: rgba(220, 20, 60, 0.28);
+      --text: #f5f5f7;
+      --soft: #c9d0de;
+    }
+
+    [data-colorway="navy"] {
+      --bg: #0b1426;
+      --line: #2a3a5e;
+    }
+
+    [data-colorway="blackout"] {
+      --bg: #050505;
+      --line: #2c2c2c;
+      --accent: #f5f5f7;
+      --on-accent: #0a0a0c;
+      --hi: #f5f5f7;
+      --glow: rgba(245, 245, 247, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 20px;
+      background:
+        radial-gradient(50% 60% at 50% 110%, var(--glow), transparent 70%),
+        var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    main {
+      max-width: 520px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--hi);
+    }
+
+    .num {
+      font-family: "Anton", Impact, "Arial Narrow Bold", sans-serif;
+      font-style: italic;
+      font-size: clamp(120px, 34vw, 220px);
+      line-height: 0.95;
+      color: transparent;
+      -webkit-text-stroke: 2px var(--hi);
+    }
+
+    h1 {
+      margin: 8px 0 0;
+      font-family: "Anton", Impact, "Arial Narrow Bold", sans-serif;
+      font-weight: 400;
+      font-size: clamp(40px, 9vw, 64px);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .text {
+      margin: 16px 0 0;
+      font-size: 17px;
+      color: var(--soft);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      margin-top: 28px;
+      padding: 12px 24px;
+      background: var(--accent);
+      color: var(--on-accent);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: var(--hi);
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--text);
+      outline-offset: 3px;
+    }
+  </style>
+
+  <script>
+    // use the same colorway the visitor picked on the main page
+    (function () {
+      try {
+        var saved = localStorage.getItem('colorway');
+        if (saved === 'navy' || saved === 'blackout') {
+          document.documentElement.setAttribute('data-colorway', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Error 404</p>
+    <div class="num" aria-hidden="true">404</div>
+    <h1>Out of bounds.</h1>
+    <p class="text">That page isn't on the roster. Let's get you back in play.</p>
+    <a class="btn" id="home-link" href="./">Back to home court</a>
+  </main>
+
+  <script>
+    // on GitHub Pages the site lives in a folder named after the repo
+    // (username.github.io/RepoName/), so point the button at that folder
+    (function () {
+      var parts = location.pathname.split('/');
+      if (/\.github\.io$/.test(location.hostname) && parts[1]) {
+        document.getElementById('home-link').href = '/' + parts[1] + '/';
+      }
+    })();
+  </script>
+</body>
+</html>

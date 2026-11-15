@@ -9,6 +9,12 @@
   <meta property="og:title" content="Ezekiel Dellosa | Software Developer">
   <meta property="og:description" content="Free agent. Open to part-time remote developer work.">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ezekiel Dellosa">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ezekiel Dellosa | Software Developer">
+  <meta name="twitter:description" content="Free agent. Open to part-time remote developer work.">
+  <!-- TODO: after the site is live, add og:url and og:image (+ twitter:image) with the full https:// address.
+       share images can't use relative paths. when the image is added, change twitter:card to summary_large_image -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +36,7 @@
     })();
   </script>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="intro" id="intro" aria-hidden="true">
@@ -47,29 +53,42 @@
     <div class="wrap site-header__row">
       <a class="wordmark" href="#top"><span class="wordmark__num">04</span> Ezekiel Dellosa</a>
 
-      <nav class="nav" aria-label="Main">
+      <nav class="nav" id="nav" aria-label="Main">
         <a href="#projects">Starting Five</a>
         <a href="#about">Scouting Report</a>
+        <a href="#off-court">Off the Court</a>
         <a href="#contact">Sign Me</a>
       </nav>
 
-      <div class="controls">
-        <span class="controls__label" id="colorway-label">Colorway</span>
-        <div class="swatches" role="group" aria-labelledby="colorway-label">
-          <button class="swatch swatch--crimson" type="button" data-colorway-btn="crimson" aria-pressed="true" aria-label="Crimson and black colorway"></button>
-          <button class="swatch swatch--navy" type="button" data-colorway-btn="navy" aria-pressed="false" aria-label="Navy and crimson colorway"></button>
-          <button class="swatch swatch--blackout" type="button" data-colorway-btn="blackout" aria-pressed="false" aria-label="Blackout colorway"></button>
-        </div>
-        <button class="motion-btn" type="button" id="motion-toggle" aria-pressed="false" aria-label="Pause motion">
-          <svg class="icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
-          <svg class="icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg>
+      <div class="settings" id="settings">
+        <button class="settings__btn" type="button" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel" aria-label="Display settings">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h9M19 8h1M4 16h1M11 16h9"/><circle cx="16" cy="8" r="2.5"/><circle cx="8" cy="16" r="2.5"/></svg>
         </button>
+
+        <div class="settings__panel" id="settings-panel" hidden>
+          <p class="settings__label" id="colorway-label">Colorway</p>
+          <div class="swatches" role="group" aria-labelledby="colorway-label">
+            <button class="swatch swatch--crimson" type="button" data-colorway-btn="crimson" aria-pressed="true" aria-label="Crimson and black colorway"></button>
+            <button class="swatch swatch--navy" type="button" data-colorway-btn="navy" aria-pressed="false" aria-label="Navy and crimson colorway"></button>
+            <button class="swatch swatch--blackout" type="button" data-colorway-btn="blackout" aria-pressed="false" aria-label="Blackout colorway"></button>
+          </div>
+
+          <div class="settings__row">
+            <span class="settings__label" id="motion-label">Motion</span>
+            <button class="switch" type="button" id="motion-toggle" role="switch" aria-checked="true" aria-labelledby="motion-label"></button>
+          </div>
+        </div>
       </div>
+
+      <!-- menu button, only shows on phones -->
+      <button class="settings__btn nav-toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
+    <section class="hero">
       <div class="wrap hero__grid">
         <div class="hero__copy">
           <p class="tag" data-reveal>Meet the free agent</p>
@@ -114,8 +133,10 @@
           <div class="stage__floor" aria-hidden="true"></div>
           <div class="stage__ring" aria-hidden="true"></div>
 
-          <video class="stage__video" id="player-video" muted loop playsinline preload="metadata" aria-label="Ezekiel Dellosa on the court">
-            <source src="assets/player.webm" type="video/webm">
+          <!-- TODO: add poster="assets/player-poster.jpg" (a frame from the video) once the video is in -->
+          <!-- preload="none" so the video never slows down the first load. main.js loads it when the stage is on screen -->
+          <video class="stage__video" id="player-video" muted loop playsinline preload="none" aria-label="Ezekiel Dellosa on the court">
+            <!-- if I make a webm version, add its source line above the mp4 -->
             <source src="assets/player.mp4" type="video/mp4">
           </video>
 
@@ -137,52 +158,8 @@
         <h2 class="section__title" data-reveal style="--d: 60ms">The projects</h2>
         <p class="section__note" data-reveal style="--d: 120ms">Tap the card to flip it and read the stats.</p>
 
-        <div class="cards">
-          <button class="flip" type="button" id="flip-card" aria-pressed="false" aria-label="Gym Management System. Flip card to read the stats" data-reveal="left">
-            <span class="flip__inner">
-              <span class="flip__face flip__front">
-                <span class="flip__top"><span class="hi">Rookie card</span><span>#01</span></span>
-                <span class="flip__shot">
-                  <span class="flip__shot-num" aria-hidden="true">01</span>
-                </span>
-                <span class="flip__info">
-                  <span class="flip__name">Gym Management System</span>
-                  <span class="flip__meta">Built for a real client · Tap to flip</span>
-                </span>
-              </span>
-              <span class="flip__face flip__back">
-                <span class="flip__back-title">Stat sheet</span>
-                <span class="stat">
-                  <span class="stat__label">The problem</span>
-                  <span class="stat__text">The gym ran its memberships on handwritten log-ins and paper cards, so the finances were hard to track.</span>
-                </span>
-                <span class="stat">
-                  <span class="stat__label">The play</span>
-                  <span class="stat__text">Organized member and membership records, plus a clear finance view for the owner.</span>
-                </span>
-                <span class="stat">
-                  <span class="stat__label">Status</span>
-                  <span class="stat__text">In development</span>
-                </span>
-                <span class="flip__meta">Tap to flip back</span>
-              </span>
-            </span>
-          </button>
-
-          <div class="slot" data-reveal style="--d: 100ms">
-            <span class="slot__num" aria-hidden="true">02</span>
-            <span class="slot__label">#02</span>
-            <span class="slot__name">On the bench</span>
-            <span class="slot__text">Next project is in the works.</span>
-          </div>
-
-          <div class="slot" data-reveal="right" style="--d: 200ms">
-            <span class="slot__num" aria-hidden="true">03</span>
-            <span class="slot__label">#03</span>
-            <span class="slot__name">On the bench</span>
-            <span class="slot__text">Roster spot open.</span>
-          </div>
-        </div>
+        <div class="cards" id="cards"></div>
+        <noscript><p class="section__note">Turn on JavaScript to see the projects.</p></noscript>
       </div>
     </section>
 
@@ -219,35 +196,109 @@
       </div>
     </section>
 
+    <section class="section" id="off-court">
+      <div class="wrap">
+        <p class="eyebrow eyebrow--hi" data-reveal>03 · Off the Court</p>
+        <h2 class="section__title" data-reveal style="--d: 60ms">The person</h2>
+        <p class="section__note" data-reveal style="--d: 120ms">What I'm into when I'm not coding.</p>
+
+        <!-- TODO: rewrite these lines in my own words -->
+        <ul class="court">
+          <li class="court__item" data-reveal>
+            <span class="stat__label">The game</span>
+            <span class="court__name">Basketball</span>
+            <span class="court__text">It's where the 04 comes from.</span>
+          </li>
+          <li class="court__item" data-reveal style="--d: 80ms">
+            <span class="stat__label">Training</span>
+            <span class="court__name">Gym</span>
+            <span class="court__text">Where I am when I'm not on the court.</span>
+          </li>
+          <li class="court__item" data-reveal style="--d: 160ms">
+            <span class="stat__label">Collection</span>
+            <span class="court__name">Sneakers</span>
+            <span class="court__text">I collect them, and the colorway matters.</span>
+          </li>
+          <li class="court__item" data-reveal style="--d: 240ms">
+            <span class="stat__label">Soundtrack</span>
+            <span class="court__name">Music</span>
+            <span class="court__text">There's always something playing.</span>
+          </li>
+          <li class="court__item" data-reveal style="--d: 320ms">
+            <span class="stat__label">Style</span>
+            <span class="court__name">Decorating</span>
+            <span class="court__text">I like things in my own colors. This site has three.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section contact" id="contact">
       <div class="wrap contact__inner">
-        <p class="eyebrow eyebrow--hi" data-reveal>03 · Sign Me</p>
+        <p class="eyebrow eyebrow--hi" data-reveal>04 · Sign Me</p>
         <h2 class="contact__title" data-reveal style="--d: 60ms">Ready to sign.</h2>
         <p class="contact__text" data-reveal style="--d: 120ms">
           Open to part-time, work-from-home developer roles. Email is the fastest way to reach me.
         </p>
         <div class="cta-row cta-row--center" data-reveal style="--d: 180ms">
-          <!-- TODO: put my email here -->
-          <a class="btn btn--primary" href="mailto:">
+          <a class="btn btn--primary" href="mailto:dellosaezekie1@gmail.com">
             <span class="btn__label">Email me</span>
             <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a class="btn btn--ghost" href="https://github.com/zleww" target="_blank" rel="noopener">
             <span class="btn__label">GitHub</span>
           </a>
+          <!-- TODO: add my LinkedIn URL here
+          <a class="btn btn--ghost" href="" target="_blank" rel="noopener">
+            <span class="btn__label">LinkedIn</span>
+          </a>
+          -->
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
+    <div class="wrap site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="wordmark" href="#top"><span class="wordmark__num">04</span> Ezekiel Dellosa</a>
+        <p class="site-footer__tag">Free agent. Building software that real people use.</p>
+        <p class="site-footer__status">Open to part-time remote work · UTC+8</p>
+      </div>
+
+      <nav class="site-footer__col" aria-label="Footer">
+        <p class="site-footer__head">Sections</p>
+        <ul>
+          <li><a href="#projects">Starting Five</a></li>
+          <li><a href="#about">Scouting Report</a></li>
+          <li><a href="#off-court">Off the Court</a></li>
+          <li><a href="#contact">Sign Me</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__col">
+        <p class="site-footer__head">Contact</p>
+        <ul>
+          <li><a href="mailto:dellosaezekie1@gmail.com">dellosaezekie1@gmail.com</a></li>
+          <li><a href="https://github.com/zleww" target="_blank" rel="noopener">GitHub</a></li>
+          <!-- TODO: add my LinkedIn URL here
+          <li><a href="" target="_blank" rel="noopener">LinkedIn</a></li>
+          -->
+        </ul>
+      </div>
+    </div>
+
     <div class="wrap site-footer__row">
       <span>&copy; <span id="year">2026</span> Ezekiel Dellosa</span>
-      <span>Cavite, Philippines · UTC+8</span>
+      <a class="site-footer__top" href="#top">
+        Back to top
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </a>
     </div>
   </footer>
 
   <script src="js/threads.js" defer></script>
+  <script src="js/projects.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

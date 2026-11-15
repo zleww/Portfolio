@@ -33,9 +33,6 @@
   var pointer = { x: 0, y: 0, active: false };
   var pulses = [];
 
-  var reduced = window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   function readColors() {
     var styles = getComputedStyle(root);
     color = styles.getPropertyValue('--thread').trim() || color;
@@ -166,7 +163,7 @@
   }
 
   function start() {
-    if (running || reduced || document.hidden) return;
+    if (running || document.hidden) return;
     running = true;
     last = performance.now();
     frame = requestAnimationFrame(loop);
