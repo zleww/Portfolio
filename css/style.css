@@ -1458,7 +1458,8 @@ main,
 
 .case__media {
   position: relative;
-  aspect-ratio: 16 / 11;
+  /* same shape as a laptop screenshot so nothing gets cut off */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   background:
     radial-gradient(70% 90% at 50% 110%, var(--glow), transparent 70%),
@@ -1477,10 +1478,10 @@ main,
   clip-path: inset(0 0 0 0 round 18px);
 }
 
-/* taller than the box so it can drift without showing gaps */
+/* a bit taller than the box so it can drift without showing gaps */
 .case__frame {
   position: absolute;
-  inset: -8% 0;
+  inset: -3% 0;
 }
 
 .case__frame img {
@@ -1527,12 +1528,13 @@ main,
 
 .case__thumbs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(var(--n, 3), 1fr);
   gap: 12px;
 }
 
 .case__thumb {
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 16 / 9;
+  min-height: 48px;
   padding: 0;
   overflow: hidden;
   background: var(--bg);
@@ -1653,6 +1655,14 @@ main,
 .case__summary {
   font-size: 18px;
   color: var(--soft);
+}
+
+/* small honest note, like "screens show test data" */
+.case__note {
+  padding-left: 12px;
+  border-left: 2px solid var(--hi);
+  font-size: 14px;
+  color: var(--muted);
 }
 
 .case__rows {
@@ -2330,6 +2340,13 @@ main,
   .case {
     grid-template-columns: 1.15fr 1fr;
     gap: 64px;
+    align-items: start;
+  }
+
+  /* pictures stay in view while you read a long case study */
+  .case__visual {
+    position: sticky;
+    top: 100px;
   }
 
   .case:nth-child(even) .case__visual {

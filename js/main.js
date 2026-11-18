@@ -165,8 +165,10 @@
     var item = el('article', 'case');
     item.setAttribute('data-reveal', '');
 
-    var images = p.images || (p.image ? [p.image] : []);
-    var alt = p.imageAlt || p.title;
+    // an image can be a path, or { src, alt } when it needs its own description
+    var images = (p.images || (p.image ? [p.image] : [])).map(function (img) {
+      return typeof img === 'string' ? { src: img, alt: p.imageAlt || p.title } : img;
+    });
 
     var visual = el('div', 'case__visual');
     var media = el('div', 'case__media');
@@ -175,8 +177,8 @@
 
     if (images.length) {
       mainImg = el('img');
-      mainImg.src = images[0];
-      mainImg.alt = alt;
+      mainImg.src = images[0].src;
+      mainImg.alt = images[0].alt;
       mainImg.loading = 'lazy';
       mainImg.decoding = 'async';
       frame.appendChild(mainImg);
@@ -191,23 +193,24 @@
       frame.appendChild(ph);
     }
     media.appendChild(frame);
-    media.appendChild(el('span', 'case__status' + (p.status === 'Live' || p.status === 'Finished' ? ' is-live' : ''), p.status));
+    media.appendChild(el('span', 'case__status' + (/^(Live|Finished)/.test(p.status) ? ' is-live' : ''), p.status));
     visual.appendChild(media);
 
     // small pictures under the big one. click one to show it big
     var thumbs = el('div', 'case__thumbs');
     if (images.length > 1) {
-      images.forEach(function (src, n) {
+      images.forEach(function (img, n) {
         var t = el('button', 'case__thumb' + (n === 0 ? ' is-active' : ''));
         t.type = 'button';
         t.setAttribute('aria-label', 'Show image ' + (n + 1) + ' of ' + p.title);
         var small = el('img');
-        small.src = src;
+        small.src = img.src;
         small.alt = '';
         small.loading = 'lazy';
         t.appendChild(small);
         t.addEventListener('click', function () {
-          mainImg.src = src;
+          mainImg.src = img.src;
+          mainImg.alt = img.alt;
           var all = thumbs.querySelectorAll('.case__thumb');
           for (var a = 0; a < all.length; a++) all[a].classList.toggle('is-active', all[a] === t);
         });
@@ -221,12 +224,14 @@
       }
     }
     for (var th = 0; th < thumbs.children.length; th++) thumbs.children[th].style.setProperty('--i', th);
+    thumbs.style.setProperty('--n', Math.min(4, thumbs.children.length) || 3);
     if (thumbs.children.length) visual.appendChild(thumbs);
 
     var body = el('div', 'case__body');
     body.appendChild(el('p', 'case__num', ['#' + p.number, p.kind, p.status].filter(Boolean).join(' · ')));
     body.appendChild(el('h3', 'case__title', p.title));
     if (p.summary) body.appendChild(el('p', 'case__summary', p.summary));
+    if (p.note) body.appendChild(el('p', 'case__note', p.note));
 
     var rows = el('dl', 'case__rows');
     function row(label, text) {
@@ -239,6 +244,8 @@
     row('The problem', p.problem);
     row(p.solution ? 'The solution' : 'The plan', p.solution || p.plan);
     row('My role', p.role);
+    // any extra rows, like { label: 'Security', text: '...' }
+    (p.rows || []).forEach(function (r) { row(r.label, r.text); });
     if (rows.children.length) body.appendChild(rows);
 
     if (p.stack && p.stack.length) {
@@ -510,7 +517,7 @@
       var box = frames[i].parentNode.getBoundingClientRect();
       if (box.bottom < 0 || box.top > vh) continue;
       var off = (box.top + box.height / 2 - vh / 2) / vh;
-      frames[i].style.transform = 'translateY(' + (off * -6) + '%)';
+      frames[i].style.transform = 'translateY(' + (off * -2.5) + '%)';
     }
 
     // statement lights up word by word
