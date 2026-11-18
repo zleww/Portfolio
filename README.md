@@ -11,21 +11,27 @@ Open `index.html` in a browser, or use the Live Server extension in VS Code.
 ## Structure
 
 ```
-index.html        page markup
-css/style.css     styles and the three colorways
-js/threads.js     animated threads background (canvas)
-js/main.js        opening, scroll reveals, colorway switcher, card flip
-assets/           favicon and the hero video
+index.html            home page
+roster.html           every project
+404.html              page not found
+css/style.css         styles, the three colorways, responsive rules
+js/threads.js         animated threads background (canvas)
+js/main.js            opening, scroll effects, colorways, motion switch, contact form
+js/projects.js        my projects (edit this to add one)
+js/certificates.js    my certificates (edit this to add one)
+assets/               favicon, my photo, project and certificate images
 ```
 
-## Hero video
+## Adding things
 
-Put the clip in `assets/` as `player.mp4` (and `player.webm` if I have one).
-Portrait works best, around 4:5. Until the file is there the stage just shows the lights.
+- Project: copy a block in `js/projects.js`. `featured: true` puts it in the Starting Five on the home page. Every project shows on the roster page.
+- Certificate: add a block in `js/certificates.js`.
+- Photos of me: replace a "Photo coming soon" figure in the Off the Court section with an `<img>`.
 
 ## To do
 
-- [ ] add hero video
-- [ ] add email on the contact button
-- [ ] screenshots and case study for the gym system
-- [ ] projects 02 and 03
+- [ ] project images and case study details
+- [ ] certificates
+- [ ] more photos for Off the Court
+- [ ] LinkedIn link
+- [ ] hero video (optional)

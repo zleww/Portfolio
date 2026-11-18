@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ezekiel Dellosa | Software Developer</title>
-  <meta name="description" content="Ezekiel Dellosa, #04. BSCS student at LPU Cavite building software for real clients. Open to part-time remote developer work.">
+  <title>Ezekiel Dellosa | Web &amp; System Developer</title>
+  <meta name="description" content="Ezekiel Dellosa, #04. Computer Science student doing web development, system development and UI/UX design. Open to part-time remote work.">
   <meta name="theme-color" content="#0A0A0C">
-  <meta property="og:title" content="Ezekiel Dellosa | Software Developer">
-  <meta property="og:description" content="Free agent. Open to part-time remote developer work.">
+  <meta property="og:title" content="Ezekiel Dellosa | Web &amp; System Developer">
+  <meta property="og:description" content="Computer Science student. Web and system development, UI/UX design. Open to part-time remote work.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ezekiel Dellosa">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Ezekiel Dellosa | Software Developer">
-  <meta name="twitter:description" content="Free agent. Open to part-time remote developer work.">
+  <meta name="twitter:title" content="Ezekiel Dellosa | Web &amp; System Developer">
+  <meta name="twitter:description" content="Computer Science student. Web and system development, UI/UX design. Open to part-time remote work.">
   <!-- TODO: after the site is live, add og:url and og:image (+ twitter:image) with the full https:// address.
        share images can't use relative paths. when the image is added, change twitter:card to summary_large_image -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -39,6 +39,8 @@
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="progress" aria-hidden="true"><span></span></div>
+
   <div class="intro" id="intro" aria-hidden="true">
     <div class="intro__inner">
       <div class="intro__num">04</div>
@@ -54,9 +56,10 @@
       <a class="wordmark" href="#top"><span class="wordmark__num">04</span> Ezekiel Dellosa</a>
 
       <nav class="nav" id="nav" aria-label="Main">
-        <a href="#projects">Starting Five</a>
         <a href="#about">Scouting Report</a>
-        <a href="#off-court">Off the Court</a>
+        <a href="#services">Playbook</a>
+        <a href="#projects">Starting Five</a>
+        <a href="roster.html">Roster</a>
         <a href="#contact">Sign Me</a>
       </nav>
 
@@ -102,17 +105,16 @@
           </h1>
 
           <p class="hero__pitch" data-reveal style="--d: 160ms">
-            I build software that real people use. 3rd-year BSCS student at LPU Cavite,
-            open to part-time remote work.
+            Computer Science student who designs and builds websites and systems that real
+            people use. 3rd year at LPU Cavite, open to part-time remote work.
           </p>
 
           <div class="badges" data-reveal style="--d: 240ms">
-            <p class="eyebrow">Badges</p>
+            <p class="eyebrow">Plays</p>
             <ul>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Python</li>
+              <li>Web Development</li>
+              <li>System Development</li>
+              <li>UI/UX Design</li>
             </ul>
           </div>
 
@@ -125,135 +127,435 @@
               <span class="btn__label">Sign me</span>
             </a>
           </div>
+
+          <a class="scroll-cue" href="#about" data-reveal style="--d: 420ms">
+            <span aria-hidden="true"></span>Scroll for the scouting report
+          </a>
         </div>
 
-        <div class="stage" id="stage" data-reveal="right" style="--d: 200ms">
-          <div class="stage__num" aria-hidden="true">04</div>
-          <div class="stage__beam" aria-hidden="true"></div>
-          <div class="stage__floor" aria-hidden="true"></div>
-          <div class="stage__ring" aria-hidden="true"></div>
+        <div class="stage has-photo" id="stage" data-reveal="right" style="--d: 200ms">
+          <img class="stage__photo" src="assets/ezekiel.webp" alt="Ezekiel Dellosa smiling in a black shirt, outside at night" width="1440" height="1920">
 
-          <!-- TODO: add poster="assets/player-poster.jpg" (a frame from the video) once the video is in -->
-          <!-- preload="none" so the video never slows down the first load. main.js loads it when the stage is on screen -->
-          <video class="stage__video" id="player-video" muted loop playsinline preload="none" aria-label="Ezekiel Dellosa on the court">
-            <!-- if I make a webm version, add its source line above the mp4 -->
-            <source src="assets/player.mp4" type="video/mp4">
-          </video>
+          <!-- TODO: hero video. put the clip in assets/player.mp4, then add this inside the video tag:
+               <source src="assets/player.mp4" type="video/mp4"> -->
+          <video class="stage__video" id="player-video" muted loop playsinline preload="none" aria-hidden="true"></video>
 
           <div class="stage__shade" aria-hidden="true"></div>
+          <span class="stage__chip"><span class="dot" aria-hidden="true"></span>Free agent · Available</span>
           <div class="stage__plate" aria-hidden="true">
             <span class="stage__plate-num">04</span>
             <span class="stage__plate-text">
               <strong>Dellosa</strong>
-              <small>Software Dev · Cavite, PH</small>
+              <small>Web &amp; System Dev · Cavite, PH</small>
             </span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="projects">
-      <div class="wrap">
-        <p class="eyebrow eyebrow--hi" data-reveal>01 · Starting Five</p>
-        <h2 class="section__title" data-reveal style="--d: 60ms">The projects</h2>
-        <p class="section__note" data-reveal style="--d: 120ms">Tap the card to flip it and read the stats.</p>
-
-        <div class="cards" id="cards"></div>
-        <noscript><p class="section__note">Turn on JavaScript to see the projects.</p></noscript>
-      </div>
-    </section>
-
-    <section class="section section--panel" id="about">
-      <div class="wrap about">
-        <div class="about__copy">
-          <p class="eyebrow eyebrow--hi" data-reveal>02 · Scouting Report</p>
-          <h2 class="section__title" data-reveal style="--d: 60ms">The player</h2>
-          <p class="about__text" data-reveal style="--d: 120ms">
-            3rd-year BSCS student at Lyceum of the Philippines University Cavite.
-            I like building things people actually end up using, and I'm looking for a
-            part-time developer role I can do from home.
-          </p>
-        </div>
-
-        <div class="sheet">
-          <div class="sheet__cell" data-reveal="left">
-            <span class="stat__label">Position</span>
-            <span class="sheet__value">Software Dev</span>
-          </div>
-          <div class="sheet__cell" data-reveal="right" style="--d: 80ms">
-            <span class="stat__label">Home court</span>
-            <span class="sheet__value">Cavite · UTC+8</span>
-          </div>
-          <div class="sheet__cell" data-reveal="left" style="--d: 160ms">
-            <span class="stat__label">Plays</span>
-            <span class="sheet__value">HTML · CSS · JS · Python</span>
-          </div>
-          <div class="sheet__cell" data-reveal="right" style="--d: 240ms">
-            <span class="stat__label">Developing</span>
-            <span class="sheet__value">Neon · Supabase · Firebase</span>
-          </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span class="marquee__item">Web Development</span><span class="marquee__star">✦</span>
+          <span class="marquee__item marquee__item--outline">System Development</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">UI/UX Design</span><span class="marquee__star">✦</span>
+          <span class="marquee__item marquee__item--outline">Shopify</span><span class="marquee__star">✦</span>
+          <span class="marquee__item">Free Agent #04</span><span class="marquee__star">✦</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="section" id="off-court">
+    <section class="section" id="about">
+      <span class="section__ghost" aria-hidden="true" data-parallax="0.18">01</span>
       <div class="wrap">
-        <p class="eyebrow eyebrow--hi" data-reveal>03 · Off the Court</p>
-        <h2 class="section__title" data-reveal style="--d: 60ms">The person</h2>
-        <p class="section__note" data-reveal style="--d: 120ms">What I'm into when I'm not coding.</p>
+        <p class="eyebrow eyebrow--hi" data-reveal>01 · Scouting Report</p>
+        <h2 class="section__title split" data-reveal>The player</h2>
 
-        <!-- TODO: rewrite these lines in my own words -->
-        <ul class="court">
-          <li class="court__item" data-reveal>
-            <span class="stat__label">The game</span>
-            <span class="court__name">Basketball</span>
-            <span class="court__text">It's where the 04 comes from.</span>
-          </li>
-          <li class="court__item" data-reveal style="--d: 80ms">
-            <span class="stat__label">Training</span>
-            <span class="court__name">Gym</span>
-            <span class="court__text">Where I am when I'm not on the court.</span>
-          </li>
-          <li class="court__item" data-reveal style="--d: 160ms">
-            <span class="stat__label">Collection</span>
-            <span class="court__name">Sneakers</span>
-            <span class="court__text">I collect them, and the colorway matters.</span>
-          </li>
-          <li class="court__item" data-reveal style="--d: 240ms">
-            <span class="stat__label">Soundtrack</span>
-            <span class="court__name">Music</span>
-            <span class="court__text">There's always something playing.</span>
-          </li>
-          <li class="court__item" data-reveal style="--d: 320ms">
-            <span class="stat__label">Style</span>
-            <span class="court__name">Decorating</span>
-            <span class="court__text">I like things in my own colors. This site has three.</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div class="wrap contact__inner">
-        <p class="eyebrow eyebrow--hi" data-reveal>04 · Sign Me</p>
-        <h2 class="contact__title" data-reveal style="--d: 60ms">Ready to sign.</h2>
-        <p class="contact__text" data-reveal style="--d: 120ms">
-          Open to part-time, work-from-home developer roles. Email is the fastest way to reach me.
+        <p class="statement lit" data-hl="computer science websites systems database">
+          I'm a 3rd-year Computer Science student who designs and builds websites and
+          systems, from the first Figma frame to the database behind it.
         </p>
-        <div class="cta-row cta-row--center" data-reveal style="--d: 180ms">
-          <a class="btn btn--primary" href="mailto:dellosaezekie1@gmail.com">
-            <span class="btn__label">Email me</span>
+
+        <div class="facts">
+          <div class="fact" data-reveal>
+            <span class="fact__num">01</span>
+            <span class="fact__title">Studying</span>
+            <span class="fact__text">BS Computer Science, 3rd year at Lyceum of the Philippines University Cavite.</span>
+          </div>
+          <div class="fact" data-reveal style="--d: 100ms">
+            <span class="fact__num">02</span>
+            <span class="fact__title">What I do</span>
+            <span class="fact__text">Web and system development, plus UI/UX design in Figma.</span>
+          </div>
+          <div class="fact" data-reveal style="--d: 200ms">
+            <span class="fact__num">03</span>
+            <span class="fact__title">Home court</span>
+            <span class="fact__text">Cavite, Philippines · UTC+8. Ready to work remotely.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--panel" id="services">
+      <span class="section__ghost" aria-hidden="true" data-parallax="0.18">02</span>
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow eyebrow--hi" data-reveal>02 · The Playbook</p>
+            <h2 class="section__title split" data-reveal>What I can handle</h2>
+          </div>
+          <p class="section__note" data-reveal style="--d: 120ms">The kinds of work you can bring me, and the tools I use for each.</p>
+        </div>
+
+        <!-- TODO: check these match what I actually offer -->
+        <div class="services">
+          <article class="service" style="--i: 0">
+            <div class="service__head">
+              <span class="service__num" aria-hidden="true">01</span>
+              <h3 class="service__title">Web Development</h3>
+            </div>
+            <div class="service__body">
+              <p class="service__text">Responsive websites and web apps that work on any screen, built with HTML, CSS, JavaScript and React, and put online with Vercel.</p>
+              <ul class="service__list">
+                <li>Landing pages and portfolios</li>
+                <li>Multi-page business sites</li>
+                <li>Web app front ends</li>
+              </ul>
+              <ul class="chips">
+                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Vercel</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service" style="--i: 1">
+            <div class="service__head">
+              <span class="service__num" aria-hidden="true">02</span>
+              <h3 class="service__title">System Development</h3>
+            </div>
+            <div class="service__body">
+              <p class="service__text">Systems that keep records and data organized, so an owner can stop relying on paper. Backed by a real database.</p>
+              <ul class="service__list">
+                <li>Records and membership systems</li>
+                <li>Admin views and dashboards</li>
+                <li>Database design</li>
+              </ul>
+              <ul class="chips">
+                <li>MySQL</li><li>Neon</li><li>Supabase</li><li>JavaScript</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service" style="--i: 2">
+            <div class="service__head">
+              <span class="service__num" aria-hidden="true">03</span>
+              <h3 class="service__title">UI/UX Design</h3>
+            </div>
+            <div class="service__body">
+              <p class="service__text">Screens planned in Figma before any code: clear layouts, simple flows and a look that stays consistent from page to page.</p>
+              <ul class="service__list">
+                <li>Wireframes and prototypes</li>
+                <li>Page and app layouts</li>
+                <li>Redesigns of existing pages</li>
+              </ul>
+              <ul class="chips">
+                <li>Figma</li><li>UI/UX</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service" style="--i: 3">
+            <div class="service__head">
+              <span class="service__num" aria-hidden="true">04</span>
+              <h3 class="service__title">Shopify Stores</h3>
+            </div>
+            <div class="service__body">
+              <p class="service__text">Shopify store setup and customization so a small business can start selling online.</p>
+              <ul class="service__list">
+                <li>Store setup</li>
+                <li>Theme customization</li>
+                <li>Product and page setup</li>
+              </ul>
+              <ul class="chips">
+                <li>Shopify</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <span class="section__ghost" aria-hidden="true" data-parallax="0.18">03</span>
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow eyebrow--hi" data-reveal>03 · Badges</p>
+            <h2 class="section__title split" data-reveal>Skills &amp; tech stack</h2>
+          </div>
+          <p class="section__count" data-reveal style="--d: 120ms">4 categories · 15 tools</p>
+        </div>
+
+        <div class="stack">
+          <div class="stack__card" data-reveal>
+            <div class="stack__head">
+              <span class="stack__num">01</span>
+              <h3 class="stack__title">Frontend</h3>
+              <span class="stack__sub">Interfaces &amp; interaction</span>
+            </div>
+            <ul class="chips">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li>
+            </ul>
+          </div>
+
+          <div class="stack__card" data-reveal style="--d: 100ms">
+            <div class="stack__head">
+              <span class="stack__num">02</span>
+              <h3 class="stack__title">Backend &amp; Data</h3>
+              <span class="stack__sub">Systems &amp; storage</span>
+            </div>
+            <ul class="chips">
+              <li>MySQL</li><li>Neon</li><li>Supabase</li><li>Python</li>
+            </ul>
+          </div>
+
+          <div class="stack__card" data-reveal style="--d: 200ms">
+            <div class="stack__head">
+              <span class="stack__num">03</span>
+              <h3 class="stack__title">Design</h3>
+              <span class="stack__sub">UI/UX</span>
+            </div>
+            <ul class="chips">
+              <li>Figma</li><li>UI/UX Design</li>
+            </ul>
+          </div>
+
+          <div class="stack__card" data-reveal style="--d: 300ms">
+            <div class="stack__head">
+              <span class="stack__num">04</span>
+              <h3 class="stack__title">Tools &amp; Deploy</h3>
+              <span class="stack__sub">Workflow</span>
+            </div>
+            <ul class="chips">
+              <li>VS Code</li><li>Git</li><li>GitHub</li><li>Vercel</li><li>Shopify</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--panel" id="projects">
+      <span class="section__ghost" aria-hidden="true" data-parallax="0.18">04</span>
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow eyebrow--hi" data-reveal>04 · Starting Five</p>
+            <h2 class="section__title split" data-reveal>Featured projects</h2>
+          </div>
+          <p class="section__note" data-reveal style="--d: 120ms">Each one explained: the problem, the plan and what I used.</p>
+        </div>
+
+        <!-- filled in from js/projects.js -->
+        <div class="cases" id="cards"></div>
+        <noscript><p class="section__note">Turn on JavaScript to see the projects.</p></noscript>
+
+        <div class="roster-cta" data-reveal>
+          <div>
+            <p class="eyebrow eyebrow--hi">The full team</p>
+            <p class="roster-cta__title">See the roster</p>
+            <p class="roster-cta__text" id="roster-total">Every project, not just the starters.</p>
+          </div>
+          <a class="btn btn--primary" href="roster.html">
+            <span class="btn__label">See the roster</span>
             <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn--ghost" href="https://github.com/zleww" target="_blank" rel="noopener">
-            <span class="btn__label">GitHub</span>
-          </a>
-          <!-- TODO: add my LinkedIn URL here
-          <a class="btn btn--ghost" href="" target="_blank" rel="noopener">
-            <span class="btn__label">LinkedIn</span>
-          </a>
-          -->
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="certificates">
+      <span class="section__ghost" aria-hidden="true" data-parallax="0.18">05</span>
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow eyebrow--hi" data-reveal>05 · Trophy Case</p>
+            <h2 class="section__title split" data-reveal>Certificates</h2>
+          </div>
+          <p class="section__note" data-reveal style="--d: 120ms">Courses and certifications I've earned along the way.</p>
+        </div>
+
+        <!-- filled in from js/certificates.js -->
+        <div class="certs" id="certs"></div>
+      </div>
+    </section>
+
+    <section class="section section--panel" id="off-court">
+      <span class="section__ghost" aria-hidden="true" data-parallax="0.18">06</span>
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="eyebrow eyebrow--hi" data-reveal>06 · Off the Court</p>
+            <h2 class="section__title split" data-reveal>The person</h2>
+          </div>
+          <p class="section__note" data-reveal style="--d: 120ms">What I'm into when I'm not coding.</p>
+        </div>
+      </div>
+
+      <!-- on desktop this row slides sideways as you scroll down. on phones you swipe it -->
+      <!-- TODO: rewrite the tile lines in my own words, and add my photos.
+           for a photo, replace the whole figure with:
+           <figure class="photo"><img src="assets/photos/court.webp" alt="..." loading="lazy"></figure> -->
+      <div class="hscroll" id="hscroll">
+        <div class="hscroll__sticky">
+          <div class="hscroll__track" id="hscroll-track">
+            <figure class="photo photo--empty" data-reveal>
+              <span class="photo__num" aria-hidden="true">04</span>
+              <figcaption><span class="photo__label">On the court</span><span class="photo__note">Photo coming soon</span></figcaption>
+            </figure>
+
+            <div class="tile" data-reveal>
+              <span class="stat__label">The game</span>
+              <span class="tile__name">Basketball</span>
+              <span class="tile__text">It's where the 04 comes from.</span>
+            </div>
+
+            <figure class="photo photo--empty" data-reveal>
+              <span class="photo__num" aria-hidden="true">04</span>
+              <figcaption><span class="photo__label">Training</span><span class="photo__note">Photo coming soon</span></figcaption>
+            </figure>
+
+            <div class="tile" data-reveal>
+              <span class="stat__label">Training</span>
+              <span class="tile__name">Gym</span>
+              <span class="tile__text">Where I am when I'm not on the court.</span>
+            </div>
+
+            <div class="tile" data-reveal>
+              <span class="stat__label">Collection</span>
+              <span class="tile__name">Sneakers</span>
+              <span class="tile__text">I collect them, and the colorway matters.</span>
+            </div>
+
+            <figure class="photo photo--empty" data-reveal>
+              <span class="photo__num" aria-hidden="true">04</span>
+              <figcaption><span class="photo__label">The collection</span><span class="photo__note">Photo coming soon</span></figcaption>
+            </figure>
+
+            <div class="tile" data-reveal>
+              <span class="stat__label">Soundtrack</span>
+              <span class="tile__name">Music</span>
+              <span class="tile__text">There's always something playing.</span>
+            </div>
+
+            <div class="tile" data-reveal>
+              <span class="stat__label">Style</span>
+              <span class="tile__name">Decorating</span>
+              <span class="tile__text">I like things in my own colors. This site has three.</span>
+            </div>
+
+            <figure class="photo photo--empty" data-reveal>
+              <span class="photo__num" aria-hidden="true">04</span>
+              <figcaption><span class="photo__label">My setup</span><span class="photo__note">Photo coming soon</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee marquee--accent" data-dir="-1">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span class="marquee__item">Open to part-time remote work</span><span class="marquee__star">✦</span>
+            <span class="marquee__item marquee__item--outline">Let's work together</span><span class="marquee__star">✦</span>
+            <span class="marquee__item">Sign the free agent</span><span class="marquee__star">✦</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section contact" id="contact">
+      <span class="section__ghost" aria-hidden="true" data-parallax="0.18">07</span>
+      <div class="wrap contact__grid">
+        <div class="contact__info">
+          <p class="eyebrow eyebrow--hi" data-reveal>07 · Sign Me</p>
+          <h2 class="contact__title split" data-reveal>Let's work together.</h2>
+          <p class="contact__text" data-reveal style="--d: 120ms">
+            Need a website, a system or a design? I'm open to part-time, work-from-home roles
+            and projects. Send a message and I'll get back to you.
+          </p>
+
+          <p class="availability" data-reveal style="--d: 180ms">
+            <span class="dot" aria-hidden="true"></span>Open to part-time remote work · UTC+8
+          </p>
+
+          <ul class="links-list">
+            <li class="link-card" data-reveal style="--d: 220ms">
+              <span class="link-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </span>
+              <a class="link-card__main" href="mailto:dellosaezekie1@gmail.com">
+                <span class="link-card__label">Email</span>
+                <span class="link-card__value">dellosaezekie1@<wbr>gmail.com</span>
+              </a>
+              <button class="copy-btn" type="button" id="copy-email" data-copy="dellosaezekie1@gmail.com">Copy</button>
+            </li>
+
+            <li class="link-card" data-reveal style="--d: 280ms">
+              <span class="link-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>
+              </span>
+              <a class="link-card__main" href="https://github.com/zleww" target="_blank" rel="noopener">
+                <span class="link-card__label">GitHub</span>
+                <span class="link-card__value">github.com/zleww</span>
+              </a>
+            </li>
+
+            <!-- TODO: add my LinkedIn URL here
+            <li class="link-card" data-reveal style="--d: 340ms">
+              <span class="link-card__icon link-card__icon--text" aria-hidden="true">in</span>
+              <a class="link-card__main" href="" target="_blank" rel="noopener">
+                <span class="link-card__label">LinkedIn</span>
+                <span class="link-card__value">linkedin.com/in/...</span>
+              </a>
+            </li>
+            -->
+          </ul>
+          <p class="sr-only" id="copy-status" aria-live="polite"></p>
+        </div>
+
+        <!-- no backend: sending opens the visitor's email app with the message filled in -->
+        <form class="form" id="contact-form" data-reveal="right" style="--d: 150ms">
+          <p class="form__title">Send a message</p>
+
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="f-need">What do you need?</label>
+            <select id="f-need" name="need" required>
+              <option value="">Pick one</option>
+              <option>A website</option>
+              <option>A system</option>
+              <option>UI/UX design</option>
+              <option>A Shopify store</option>
+              <option>A part-time developer</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="message" rows="5" placeholder="Tell me about your project or role..." required></textarea>
+          </div>
+
+          <button class="btn btn--primary" type="submit">
+            <span class="btn__label">Send message</span>
+            <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form__note" id="form-status" aria-live="polite">Opens your email app with the message ready to send.</p>
+        </form>
       </div>
     </section>
   </main>
@@ -262,15 +564,19 @@
     <div class="wrap site-footer__grid">
       <div class="site-footer__brand">
         <a class="wordmark" href="#top"><span class="wordmark__num">04</span> Ezekiel Dellosa</a>
-        <p class="site-footer__tag">Free agent. Building software that real people use.</p>
+        <p class="site-footer__tag">Computer Science student. Web and system development, UI/UX design.</p>
         <p class="site-footer__status">Open to part-time remote work · UTC+8</p>
       </div>
 
       <nav class="site-footer__col" aria-label="Footer">
         <p class="site-footer__head">Sections</p>
-        <ul>
-          <li><a href="#projects">Starting Five</a></li>
+        <ul class="site-footer__links">
           <li><a href="#about">Scouting Report</a></li>
+          <li><a href="#services">Playbook</a></li>
+          <li><a href="#skills">Badges</a></li>
+          <li><a href="#projects">Starting Five</a></li>
+          <li><a href="roster.html">Roster</a></li>
+          <li><a href="#certificates">Trophy Case</a></li>
           <li><a href="#off-court">Off the Court</a></li>
           <li><a href="#contact">Sign Me</a></li>
         </ul>
@@ -299,6 +605,7 @@
 
   <script src="js/threads.js" defer></script>
   <script src="js/projects.js" defer></script>
+  <script src="js/certificates.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
