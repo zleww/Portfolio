@@ -703,10 +703,10 @@
       var message = form.elements.message.value.trim();
       var subject = 'Portfolio: ' + need + ' (from ' + name + ')';
       var body = message + '\n\n- ' + name;
-      window.location.href = 'mailto:dellosaezekie1@gmail.com' +
+      window.location.href = 'mailto:dellosaezekiel1@gmail.com' +
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(body);
-      if (formStatus) formStatus.textContent = 'Opening your email app. If nothing opens, email me at dellosaezekie1@gmail.com.';
+      if (formStatus) formStatus.textContent = 'Opening your email app. If nothing opens, email me at dellosaezekiel1@gmail.com.';
     });
   }
 

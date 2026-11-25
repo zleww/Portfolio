@@ -19,7 +19,7 @@ window.PROJECTS = [
     status: 'Live prototype',
     featured: true,
     summary: 'A phone-first gym management system for small gyms that still run on paper. Front-desk staff check members in, sell and renew plans, and record cash and GCash payments. The owner gets revenue reports, payroll and an activity log.',
-    note: 'Deployed and working, but no real members use it yet. A trial run with the gym is planned. Screenshots show test data.',
+    note: 'Deployed and working, but no real members use it yet. A trial run with the gym is planned. Screenshots show demo data.',
     problem: 'A local gym runs everything on paper. Members sign a handwritten logbook, memberships are paper cards whose expiry is easy to miss (so expired members walk in), and there is no single record of cash and GCash payments, so the owner cannot see revenue or growth.',
     solution: 'A web app that runs on any phone. Staff search a member and see a large Active, Expiring or Expired status, and expired members get a Renew button instead of Check in. Every payment is tied to the staff member who took it, prices come from the server so they cannot be changed at the desk, mistakes are voided with a reason and never deleted, and the day closes with a blind cash count. The owner gets revenue reports, payroll with SSS, PhilHealth, Pag-IBIG and withholding tax worked out, an activity log and CSV backups.',
     role: 'Full stack, solo project: design, database, front end, security, testing and deployment',
@@ -28,14 +28,14 @@ window.PROJECTS = [
     ],
     stack: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Vercel', 'Vitest', 'GitHub Actions'],
     images: [
-      { src: 'assets/projects/laced-1.webp', alt: 'Laced landing page: gym management for small gyms still on paper, with a member check-in card' },
-      { src: 'assets/projects/laced-2.webp', alt: 'Laced owner dashboard with money collected today, check-ins and revenue trends (test data)' },
-      { src: 'assets/projects/laced-3.webp', alt: 'Laced check-in screen selling a day pass to a walk-in, paid with cash or GCash' },
-      { src: 'assets/projects/laced-4.webp', alt: 'Laced reports page with revenue by month and a month by month table (test data)' }
+      { src: 'assets/projects/laced-1.webp', alt: 'Laced landing page: gym management for small gyms still on paper, built for Philippine gyms' },
+      { src: 'assets/projects/laced-2.webp', alt: 'Laced owner dashboard with money collected today, check-ins, revenue trends and renewals due (demo data)' },
+      { src: 'assets/projects/laced-3.webp', alt: 'Laced: off paper in three steps, next to the phone members list showing active, expiring and expired plans (demo data)' },
+      { src: 'assets/projects/laced-4.webp', alt: 'Laced closing section: move your gym off the paper logbook, with request a demo and sign in buttons' }
     ],
     links: [
-      { label: 'Live site', url: 'https://laced-rho.vercel.app' },
-      { label: 'GitHub', url: 'https://github.com/zleww/Laced' }
+      { label: 'Live site', url: 'https://laced-lp.vercel.app' },
+      { label: 'GitHub', url: 'https://github.com/zleww/laced_lp' }
     ]
   },
   {
