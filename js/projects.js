@@ -67,10 +67,10 @@ window.PROJECTS = [
     ],
     stack: ['HTML', 'CSS', 'JavaScript', 'Python', 'FastAPI', 'Pydantic', 'PostgreSQL', 'Neon', 'JWT', 'Vercel', 'Swagger', 'Git'],
     images: [
-      { src: 'assets/projects/lawliet-1.webp', alt: 'L-Lawliet home page: Understand the Law, Empower Yourself, with a law search bar and categories' },
-      { src: 'assets/projects/lawliet-2.webp', alt: 'L-Lawliet log in page with an option to continue as a guest' },
-      { src: 'assets/projects/lawliet-3.webp', alt: 'L-Lawliet admin dashboard listing laws with edit and delete buttons' },
-      { src: 'assets/projects/lawliet-4.webp', alt: 'L-Lawliet user profile with saved laws, law suggestions and notes' }
+      { src: 'assets/projects/lawliet-1.webp', alt: 'L-Lawliet landing page: Read the law the way you study it, with start reading and browse as a guest buttons' },
+      { src: 'assets/projects/lawliet-2.webp', alt: 'L-Lawliet browse page listing Republic Acts with a search bar, category filters and a guest view notice' },
+      { src: 'assets/projects/lawliet-3.webp', alt: 'L-Lawliet how it works: find it fast, read the plain version, learn from classmates, next to a search for data privacy' },
+      { src: 'assets/projects/lawliet-4.webp', alt: 'L-Lawliet home page: Philippine laws in plain English, with a search bar and a statue of Lady Justice' }
     ],
     links: [
       { label: 'Live site', url: 'https://l-lawliet-three.vercel.app' },
