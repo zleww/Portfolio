@@ -77,6 +77,33 @@ window.PROJECTS = [
       { label: 'API docs', url: 'https://l-lawliet-three.vercel.app/docs' },
       { label: 'GitHub', url: 'https://github.com/zleww/L-Lawliet' }
     ]
+  },
+  {
+    number: '04',
+    title: 'JurisCards',
+    kind: 'Philippine Law Flashcards & Quiz App',
+    status: 'Live',
+    featured: false,
+    summary: 'A study site with flashcards and practice quizzes for Philippine Republic Acts. Guests can try it, and signed-in users get saved progress, their own cards and quiz history.',
+    note: 'Shares one database and account system with L-Lawliet. Guests can study 10 laws.',
+    problem: 'There is too much law to study, which makes it hard for students to remember the details.',
+    solution: 'Every Republic Act becomes a flashcard with the question on the front and the law, an example and the penalties on the back. Mark cards Mastered or For review, shuffle a new set of 20, or write your own cards. Practice quizzes use the same laws: guests get 5 questions, signed-in users pick 5 to 20 and their scores are saved. A review page shows progress by category, a daily goal and quiz history, and every law has student notes shared with L-Lawliet.',
+    role: 'Solo project, school project',
+    rows: [
+      { label: 'Connected to L-Lawliet', text: 'JurisCards has no database of its own. It reads and writes everything through the L-Lawliet API, so a law added there becomes a new card here, and one account works on both sites. The 10-law guest limit and every save are enforced by the API and by row-level security in the database, not only by the pages.' },
+      { label: 'Access levels', text: 'Guest, user and admin. Guests study 10 laws, signed-in users get every law, and admins also get a page with accounts and study activity.' }
+    ],
+    stack: ['HTML', 'CSS', 'JavaScript', 'React', 'TypeScript', 'Vite', 'Tailwind CSS', 'GSAP', 'Python', 'FastAPI', 'PostgreSQL', 'Neon', 'JWT', 'Vercel'],
+    images: [
+      { src: 'assets/projects/juriscards-1.webp', alt: 'JurisCards landing page: Know the law on exam day, not just the night before, with start studying and guest buttons' },
+      { src: 'assets/projects/juriscards-2.webp', alt: 'JurisCards landing page comparing the old way of rereading notes with the JurisCards way: answer before you flip, mark what you know, quiz on the details' },
+      { src: 'assets/projects/juriscards-3.webp', alt: 'JurisCards how it works: open the deck, flip and mark it, test yourself, next to a flashcard page showing a Cybercrime Prevention Act question' },
+      { src: 'assets/projects/juriscards-4.webp', alt: 'JurisCards study home as a guest, showing study modes for flashcards, browse laws, my cards and practice quiz, with an overview of cards studied' }
+    ],
+    links: [
+      { label: 'Live site', url: 'https://juris-card.vercel.app' },
+      { label: 'GitHub', url: 'https://github.com/zleww/JurisCard' }
+    ]
   }
 
   // TODO: add the others
